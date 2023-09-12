@@ -1,0 +1,113 @@
+=========
+Packages
+=========
+
+-> Packages are used to group the classes , interfaces, exceptions and errors
+
+-> In java language, so many classes, interfaces, Exceptions and Errors are already available.
+
+		Ex: String, StringBuffer, StringBuilder, Arrays, BufferedReader, Scanner etc....
+
+-> Sun people divided predefined classes, interfaces, Exceptions into several packages
+
+				1) java.lang
+
+				2) java.io
+
+				3) java.util
+
+				4) java.sql
+
+-> java.lang package is default package and it is available for all java classes by default.
+
+-> If we want to use any predefined class which is not part of java.lang package then we have to import that class using 'import' keyword.
+
+// Example Of predefined package import
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+	}
+}
+
+====================
+User Defined Packages
+====================
+
+-> In our project we will create our own packages to organize project related classes & interfaces
+
+-> To create a package we will use 'package' keyword
+
+-> In java class, package statement should be in first line and class should have only one package statement.
+
+-> We can create user-defined package like below
+
+			ex:
+					package  srini;
+
+					package com.tcs.aadhar;
+							com.tcs.aadhar.userRegistration
+
+-> Sample package naming convention :  company-name.project-name.module-name
+
+
+				com.ibm.irctc.admin
+						AdminLogin.java
+						AdminService.java
+						Request.java
+
+				com.ibm.irctc.user
+						UserLogin.java
+						UserService.java
+
+				com.ibm.irctc.reports
+						ReportService.java
+						Request.java
+						
+						com.infosys.amazon.cart
+
+Note: In project we can create 2 classes with same name in using 2 different packages.
+
+package com.oracle;
+
+public class Engine {
+
+	public void start() {
+		System.out.println("Engine starting...");
+	}
+
+}
+
+
+package com.ibm;
+
+import java.util.Scanner;
+import com.oracle.Engine;
+
+public class Car {
+
+	public void drive() {
+
+		Engine eng = new Engine();
+		eng.start();
+		
+		Scanner s = new Scanner(System.in);
+
+	}
+}
+
+
+Note:
+
+1) In class, package statement should be in first line  (top)
+
+2) After package statement we can write multiple import statements
+
+3) import java.io.*  (it means all classes, interface, exceptions of io package will be imported) - not recommended
+
+4) If 2 classes are in same package then import not required.
